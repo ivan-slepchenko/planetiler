@@ -489,7 +489,7 @@ public class FeatureMerge {
         List<LinearRing> rings = innerRings == 0 ? List.of() : new ArrayList<>(innerRings);
         for (int i = 0; i < innerRings; i++) {
           LinearRing innerRing = poly.getInteriorRingN(i);
-          if (minHoleArea <= 0 || Area.ofRing(innerRing.getCoordinateSequence()) > minArea) {
+          if (minHoleArea <= 0 || Area.ofRing(innerRing.getCoordinateSequence()) > minHoleArea) {
             rings.add(innerRing);
           }
         }

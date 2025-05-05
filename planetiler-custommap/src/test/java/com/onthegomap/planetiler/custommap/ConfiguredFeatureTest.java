@@ -1237,6 +1237,7 @@ class ConfiguredFeatureTest {
         5,
         10
       ),
+      null,
       null
     ), loadConfig(config).findFeatureLayer("testLayer").postProcess());
   }
@@ -1263,7 +1264,8 @@ class ConfiguredFeatureTest {
       null,
       new MergePolygons(
         3
-      )
+      ),
+      null
     ), loadConfig(config).findFeatureLayer("testLayer").postProcess());
   }
 

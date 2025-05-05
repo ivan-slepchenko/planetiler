@@ -106,6 +106,17 @@ public class ConfiguredProfile implements Profile {
       );
     }
 
+    if (featureLayer.postProcess().mergeNearbyPolygons() != null) {
+      var mergeNearby = featureLayer.postProcess().mergeNearbyPolygons();
+
+      items = FeatureMerge.mergeNearbyPolygons(items,
+        mergeNearby.minArea(), // minimum area in square tile pixels of polygons to emit
+        mergeNearby.minHoleArea(), // the minimum area in square tile pixels of inner rings of polygons to emit
+        mergeNearby.minDistance(), // the minimum threshold in tile pixels between polygons to combine into a group
+        mergeNearby.buffer() // the amount (in tile pixels) to expand then contract polygons by in order to combine almost-touching polygons
+      );
+    }
+
     return items;
   }
 
