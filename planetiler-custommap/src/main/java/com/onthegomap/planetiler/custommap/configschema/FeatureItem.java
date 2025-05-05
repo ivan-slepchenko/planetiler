@@ -13,6 +13,7 @@ public record FeatureItem(
   @JsonProperty FeatureGeometry geometry,
   @JsonProperty("include_when") Object includeWhen,
   @JsonProperty("exclude_when") Object excludeWhen,
+  @JsonProperty("buffer_pixels") Object bufferPixels,
   Collection<AttributeDefinition> attributes
 ) {
 

@@ -91,6 +91,7 @@ public class ConfiguredFeature {
     processors.add(makeFeatureProcessor(feature.minZoom(), Integer.class, Feature::setMinZoom));
     processors.add(makeFeatureProcessor(feature.maxZoom(), Integer.class, Feature::setMaxZoom));
     processors.add(makeFeatureProcessor(feature.minSize(), Double.class, Feature::setMinPixelSize));
+    processors.add(makeFeatureProcessor(feature.bufferPixels(), Double.class, Feature::setBufferPixels));
 
     featureProcessors = processors.stream().filter(Objects::nonNull).toList();
   }
