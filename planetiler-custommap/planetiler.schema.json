@@ -398,6 +398,10 @@
           "description": "A tag specification which determines the features to exclude. This rule is applied after `includeWhen`. If unspecified, no exclusion filter is applied.",
           "$ref": "#/$defs/boolean_expression"
         },
+        "buffer_pixels": {
+          "description": "Buffer the feature in pixels when including into the tile.",
+          "$ref": "#/$defs/expression"
+        },
         "min_zoom": {
           "description": "An expression that returns the minimum zoom to render this feature at.",
           "$ref": "#/$defs/expression"
